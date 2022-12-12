@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class A {
+public:
+	A() {
+		cout<<"A has been created"<<endl;
+	}
+	~A() {
+		cout<<"A has been deleted"<<endl;
+	}
+};
+
+class B {
+public:
+	B() {
+		cout<<"B has been created"<<endl;
+	}
+	~B() {
+		cout<<"B has been deleted"<<endl;
+	}
+};
+
+class C {
+public:
+	C() {
+		cout<<"C has been created"<<endl;
+	}
+	~C() {
+		cout<<"C has been deleted"<<endl;
+	}
+};
+class D {
+private:
+	A a;
+	B b;
+	C c;
+public:
+	D() : a(),b(),c(){
+		cout<<"D has been created"<<endl;
+	}
+	~D() {
+		cout<<"D has been deleted"<<endl;
+	}
+};
+
+int main() {
+	D d;
+/*
+Constructors are called based on Class data members order NOT initalizer list order
+Destructior called in the reverse order in which they appear in the class declaration.
+*/
+	return 0;
+}
