@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct Date{
+    int day,month,year;
+    void setDate(int d,int m,int y){
+    day=d;
+    month=m;
+    year=y;
+    }
+  void printDate1(){
+cout<<"Date is ";
+  cout<<year<<"-"<<month<<"-"<<day<<endl;
+  }
+   void printDate2(){
+cout<<"Date is ";
+  cout<<month<<"-"<<year<<endl;
+  }
+  void printDate3(){
+cout<<"Date is ";
+  cout<<day<<"-"<<month<<endl;
+  }
+};
+int main ()
+{
+  int d,m,y;
+  cin>>d>>m>>y;
+  Date date1;
+  date1.setDate(d,m,y);
+  date1.printDate1();
+  date1.printDate2();
+  date1.printDate3();
+
+
+   return 0;
+}
