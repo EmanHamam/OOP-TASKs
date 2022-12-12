@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class ClassA {
+public:
+	ClassA() {
+		cout<<"ClassA Constructor\n";
+	}
+};
+
+class ClassB {
+private:
+	ClassA aa; //1
+	int x;
+public:
+	ClassB(int x) {
+		this->aa = ClassA(); //2
+		this->x = x;
+	}
+};
+
+class ClassC {
+private:
+	int &y;
+	ClassB bb;
+
+public:
+	ClassC(int &y, const ClassB &bb):y(y),bb(bb){ // answer
+
+    // we use intializer list to initialize a reference and class b that haven't a default constructor
+	}
+};
+
+
+int main() {
+	int hello = 10;
+	ClassB b(5);
+	ClassC cc(hello, b);
+	// ClassA constrctor has been called twice
+	return 0;
+}
